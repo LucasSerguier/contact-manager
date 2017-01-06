@@ -1,0 +1,13 @@
+.maClasse {
+  color: #FF44CC;
+}
+h1 {
+  color: #444444;
+}
+p {
+  color: #444444;
+}
+p.inverse {
+  background-color: #444444;
+  color: #FFFFFF;
+}

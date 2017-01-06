@@ -1,0 +1,73 @@
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-9 col-md-offset-3">
+      <input type="text" class="form-control" ng-model="vm.filter" placeholder="Filtrer les résultats">
+    </div>
+  </div>
+
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="list-group">
+            <a ng-click="vm.getContacts()" class="list-group-item active">All Contact<span class="badge">{{vm.nbContacts}}</span></a>
+            <a ng-repeat="groupe in vm.groupes" ng-click="vm.getContactByGroupe(groupe.id)" class="list-group-item">{{groupe.nom}}</a>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <div class="panel panel-default">
+            <table class="table">
+              <tr ng-repeat="contact in vm.contacts | filter: vm.filter">
+                <td class="middle">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img class="media-object" src="images/picto_contact.png" alt="...">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">{{contact.nom}}</h4>
+                      <address>
+                        <strong>{{contact.prenom}}</strong><br>
+                      {{contact.numero}}
+                      </address>
+                    </div>
+                  </div>
+                </td>
+                <td width="100" class="middle">
+                  <div>
+                    <button type="button" class="btn btn-default" ng-click="vm.editerContact(contact)">
+                      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-danger" ng-click="vm.deleteContact(contact.id)">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-danger" ng-click="vm.deleteGroupe()" ng-if="vm.groupes.length != 0">
+        Supprimer ce groupe
+      </button>
+    </div>
+
+
+
+
+
+  <!--  <button type="button" class="btn btn-default" ng-click="vm.editerGroupe(groupe)">
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+    </button>
+
+    <button type="button" class="btn btn-default" ng-click="vm.deleteGroupe(groupe.id)">
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+  -->

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet/less" type="text/css" href="styles/styles.less">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+  </head>
+  <body ng-app="app">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand text-uppercase" ui-sref="contact-list">
+            My contacts
+          </a>
+        </div>
+        <!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <div class="nav navbar-right navbar-btn">
+            <a ui-sref="contact-add" class="btn btn-default">
+              <i class="glyphicon glyphicon-plus"></i>
+              Add Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/less/dist/less.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+
+
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/contact.service.js"></script>
+    <script src="scripts/services/groupe.service.js"></script>
+    <script src="scripts/controllers/contact-list.controller.js"></script>
+    <script src="scripts/controllers/contact-add.controller.js"></script>
+
+
+</body>
+</html>
